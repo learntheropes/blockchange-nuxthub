@@ -1,0 +1,40 @@
+name: Deploy to NuxtHub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: "Deploy to NuxtHub"
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+        env:
+          NUXT_HUB_REMOTE: false
+
+      - name: Deploy to NuxtHub
+        uses: nuxt-hub/action@v2
+        with:
+          project-key: ${{ secrets.NUXT_HUB_PROJECT_KEY }}
+        env:
+          NUXT_HUB_PROJECT_URL: ${{ secrets.NUXT_HUB_PROJECT_URL }}
+          NUXT_HUB_PROJECT_SECRET_KEY: ${{ secrets.NUXT_HUB_PROJECT_SECRET_KEY }}

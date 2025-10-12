@@ -1,0 +1,105 @@
+import { resolve } from 'node:path'
+
+const isDeployed = process.env.NODE_ENV === 'production'
+const deploymentDomain = process.env.URL || 'http://localhost:3000'
+
+import { locales, localeCodes, defaultLocale } from './assets/js/localization'
+
+const ABS_CALCOM_PLUGIN = resolve('./node_modules/nuxt-calcom/runtime/plugin')
+const CALCOM_PLUGIN_TARGET = resolve('./node_modules/nuxt-calcom/dist/runtime/plugin.ts')
+const ABS_CALCOM_COMPONENTS = resolve('./node_modules/nuxt-calcom/runtime/components')
+const CALCOM_COMPONENTS_TARGET = resolve('./node_modules/nuxt-calcom/dist/runtime/components')
+
+export default defineNuxtConfig({
+  compatibilityDate: '2025-10-10',
+
+  alias: {
+    'nuxt-calcom/runtime/plugin': CALCOM_PLUGIN_TARGET,
+    [ABS_CALCOM_PLUGIN]: CALCOM_PLUGIN_TARGET,
+    'nuxt-calcom/runtime/components': CALCOM_COMPONENTS_TARGET,
+    [ABS_CALCOM_COMPONENTS]: CALCOM_COMPONENTS_TARGET,
+  },
+
+  vite: {
+    resolve: {
+      alias: {
+        'nuxt-calcom/runtime/plugin': CALCOM_PLUGIN_TARGET,
+        [ABS_CALCOM_PLUGIN]: CALCOM_PLUGIN_TARGET,
+        'nuxt-calcom/runtime/components': CALCOM_COMPONENTS_TARGET,
+        [ABS_CALCOM_COMPONENTS]: CALCOM_COMPONENTS_TARGET,
+      }
+    }
+  },
+
+  build: { transpile: ['nuxt-calcom'] },
+
+  app: {
+    head: {
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { id: 'googlebot', name: 'googlebot', content: 'notranslate' },
+        { id: 'og:type', name: 'og:type', content: 'website' },
+        { id: 'og:url', name: 'og:url', content: deploymentDomain },
+        { id: 'og:site_name', name: 'og:site_name', content: 'Giovanni Learntheropes' },
+        { id: 'og:image', name: 'og:image', content: `${deploymentDomain}/favicon/favicon.png` },
+        { id: 'twitter:card', name: 'twitter:card', content: 'summary' },
+        { id: 'twitter:image', name: 'twitter:image', content: `${deploymentDomain}/favicon/favicon.png` },
+      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon/favicon.ico' }]
+    },
+  },
+
+  css: ['~/assets/scss/main.scss'],
+  components: [{ path: '~/components', pathPrefix: false, global: true }],
+
+  nitro: {
+    preset: 'cloudflare_module',
+  },
+
+  modules: ['@nuxtjs/i18n', '@nuxt/content', 'nuxt-delay-hydration', 'nuxt-umami', 'nuxt-calcom', '@nuxthub/core'],
+
+  hub: {
+    blob: true,
+    cache: true,
+    database: true,
+    kv: false,
+    remote: process.env.NUXT_HUB_REMOTE === 'true',
+  },
+  nitro: {
+    external: process.env.NUXT_HUB_REMOTE === 'false' ? [] : undefined,
+  },
+
+  calcom: {
+    defaultLink: 'learntheropes/60',
+    ui: { theme: 'light' }
+  },
+
+  umami: {
+    enabled: isDeployed,
+    id: process.env.NUXT_PUBLIC_UMAMI_ID,
+    host: process.env.NUXT_PUBLIC_UMAMI_HOST,
+    autoTrack: true,
+  },
+
+  i18n: {
+    baseUrl: deploymentDomain,
+    locales,
+    defaultLocale,
+    lazy: true,
+    langDir: 'lang',
+    strategy: 'prefix',
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
+    detectBrowserLanguage: {
+      useCookie: false,
+      redirectOnRoot: true,
+      redirectOn: 'root',
+    }
+  },
+
+  content: { locales: localeCodes, defaultLocale },
+
+  delayHydration: { mode: 'init', debug: !isDeployed }
+})
