@@ -70,10 +70,10 @@ export default defineNuxtConfig({
     external: process.env.NUXT_HUB_REMOTE === 'false' ? [] : undefined,
   },
 
-  calcom: {
-    defaultLink: 'learntheropes/60',
-    ui: { theme: 'light' }
-  },
+  // calcom: {
+  //   defaultLink: 'learntheropes/60',
+  //   ui: { theme: 'light' }
+  // },
 
   umami: {
     enabled: isDeployed,
@@ -101,5 +101,7 @@ export default defineNuxtConfig({
 
   content: { locales: localeCodes, defaultLocale },
 
-  delayHydration: { mode: 'init', debug: !isDeployed }
+  plugins: ['~/plugins/scroll.js'],
+
+  // delayHydration: { mode: 'init', debug: !isDeployed }
 })
