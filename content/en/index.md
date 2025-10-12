@@ -14,15 +14,16 @@ An EAS has 3 taxes:
 
 - **IVA** (vat) 10% but it's **0%** for us since we invoice out of the country with a semi automated system.  
 - **IRE** (income) **3%** on the total income if you don't deduct national expenses (up to 250.000 USD) or **10%** if you deduct expenses.  
-- **IDU** (dividend) 8% if the shareholder is a resident, **15%** if not resident, paid only on the **distributed profits** of the company.   
+- **IDU** (dividend) **8%** if the shareholder is a resident, **15%** if not resident, paid only on the **distributed profits** of the company.   
 
 You will be **not perceived as an offshore incorporated business**, with all the annexed consequences to invoice EU/US clients.  
 
 ## Compliance
-Read the [AML/KYC laws](/en/laws).  
-We are consulting with the SEPRELAD to understand the compliance requirements and if these laws also apply to self custodial Bitcoin and crypto self custodial business.  
-You can find our [official consultation](/en/consultation) to the SEPRELAD here.  
-We expect an official response by Q2/2025.  
+All crypto related business in Paraguay must **register with the SEPRALAD (AML public secretary)**.  
+By presenting an official consultation to the office, we realized that also self custoduial business must register. [Read](/en/consultation) our *consulta directa* and their response.  
+SEPRELAD registered businesses must elaborate a **custom money loudering prevention protocall** based on their business models that must include also the KYC processes.
+In most of the case, businesses can benefit a **KYC exeption for their users for traded volume up to 50.000 USD**. Our team of lawyers can draft a protocall based on your company business model.
+Feel free do dig into de relevant [laws and reculations](/en/laws). 
 
 ## Invoicing
 There are few option for invoicing:  
