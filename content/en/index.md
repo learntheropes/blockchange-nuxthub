@@ -1,6 +1,6 @@
 ---
 title: Blockchange 🇵🇾
-description: We assist bitcoin/crypto and AI businesses to relocate in Paraguay
+description: We assist bitcoin/crypto and AI businesses to relocate and run the company in Paraguay
 ---
 
 ## Structure
@@ -39,6 +39,10 @@ Uruguayan comapny **DLocal** is a good alternative to Stripe that does not only 
 **Paysera** can process card specific for European client and it supports Paraguayan companies.   
 If you need mainstream providers, the most common alternative is to create a **US/UK/CA** company as a payment processor subsidiary dedicated to processing credit card with **Strip** and banking with **Revolut** or **Wise** company owned by the paraguayan company.
 We can also help you to accept **bitcoin** and **USDT** payments with a **self custodial** solution.  
+
+## Human resources
+All the **legal, administrative an fiscal** matter of your company are handled by **us**.  
+In case you want to hire somebody locally, you have access to **qualified workforce from Europe and North America** that relocated here. For lower positions you have access to many **cheap locals**.  
 
 ## Funding
 One of the way to obtain Paraguayan citizenship after 3 years of permanent residency, is to be a shareholder of a company registered in the country.  
