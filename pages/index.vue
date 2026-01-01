@@ -43,21 +43,6 @@
                   Learn more
                 </o-button>
               </div>
-
-              <div class="mt-4">
-                <p class="has-text-grey is-size-7 mb-2">
-                  {{ home.meta.paymentsTitle }}
-                </p>
-                <div class="tags">
-                  <span
-                    v-for="(p, i) in home.meta.paymentsItems"
-                    :key="i"
-                    class="tag is-info is-light"
-                  >
-                    {{ p }}
-                  </span>
-                </div>
-              </div>
             </div>
 
             <!-- optional right column later if you want -->
