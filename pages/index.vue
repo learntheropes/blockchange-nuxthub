@@ -60,6 +60,9 @@
               </div>
             </div>
 
+            <!-- optional right column later if you want -->
+            <!-- <div class="column is-5"></div> -->
+
           </div>
         </div>
       </div>
@@ -78,34 +81,29 @@
       </div>
     </section>
 
-        <!-- ARCHITECTURE LINKS -->
-    <section class="section">
+    <!-- PILLAR LINKS (ONLY ONCE) -->
+    <section class="section" v-if="home.meta.pillars && home.meta.pillars.length">
       <div class="container">
         <h2 class="title is-4">
-          {{ home.meta.architectureLinksTitle }}
+          {{ home.meta.architectureLinksTitle || 'Explore the architecture in detail' }}
         </h2>
 
-        <div class="columns is-variable is-6 mt-4">
+        <div class="columns is-multiline is-variable is-6 mt-4">
           <div
-            class="column is-6"
-            v-for="(link, i) in home.meta.architectureLinks"
+            v-for="(p, i) in home.meta.pillars"
             :key="i"
+            class="column is-4"
           >
-            <div class="box h-100">
-              <h3 class="title is-5 mb-2">
-                {{ link.title }}
-              </h3>
-
-              <p class="has-text-grey mb-4">
-                {{ link.text }}
-              </p>
+            <div class="box shadow-soft h-full">
+              <h3 class="title is-5 mb-2">{{ p.title }}</h3>
+              <p class="has-text-grey mb-4">{{ p.text }}</p>
 
               <o-button
                 variant="light"
                 tag="a"
-                :href="link.href"
+                :href="p.href"
               >
-                Read more →
+                Learn more →
               </o-button>
             </div>
           </div>
@@ -128,6 +126,7 @@
           <p class="is-size-7 has-text-grey mb-4">
             {{ home.meta.bookingNote }}
           </p>
+
           <IndexContacts />
         </div>
       </div>
@@ -163,5 +162,10 @@ const { data: home } = await useAsyncData(
 
 .shadow-soft {
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* if you don't already have it globally */
+.h-full {
+  height: 100%;
 }
 </style>

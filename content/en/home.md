@@ -43,4 +43,22 @@ architectureLinks:
   - title: Off-Ramp & Payout Architecture
     text: How funds exit your system through payouts, settlement targets, and treasury flows.
     href: /off-ramp-and-payout-architecture
+pillars:
+  - title: In-ramp architecture
+    text: >
+      How money enters your system across cards, banks, local rails,
+      stablecoins, and P2P flows.
+    href: /in-ramp-architecture
+
+  - title: Off-ramp & payout architecture
+    text: >
+      How funds are settled, paid out, and withdrawn — without freezes,
+      surprises, or operational dead ends.
+    href: /off-ramp-and-payout-architecture
+
+  - title: Reduce false payment declines
+    text: >
+      Why legitimate payments fail — and how multi-rail architectures
+      dramatically improve acceptance rates in cross-border markets.
+    href: /reduce-false-declines
 ---
