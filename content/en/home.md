@@ -27,22 +27,8 @@ explanationText: >
   geography, amount, risk, and operational constraints — both
   when money comes in and when it needs to go out.
 
-bookingTitle: Book a paid strategy call
-bookingText: >
-  $100/hour. Leave with a clear blueprint covering payment acceptance,
-  payouts, settlement targets, and operational constraints.
-bookingNote: >
-  Pay with Bitcoin (Lightning or on-chain) or USDT today.
-  Credit and debit cards coming soon.
 architectureLinksTitle: Explore the architecture in detail
-architectureLinks:
-  - title: In-Ramp Architecture
-    text: How money enters your system across cards, banks, Pix-style rails, stablecoins, and P2P Bitcoin.
-    href: /in-ramp-architecture
 
-  - title: Off-Ramp & Payout Architecture
-    text: How funds exit your system through payouts, settlement targets, and treasury flows.
-    href: /off-ramp-and-payout-architecture
 pillars:
   - title: In-ramp architecture
     text: >
@@ -61,4 +47,37 @@ pillars:
       Why legitimate payments fail — and how multi-rail architectures
       dramatically improve acceptance rates in cross-border markets.
     href: /reduce-false-declines
+
+# NEW: async vs sync contact copy
+contactTitle: Get a tailored quote
+contactIntro: >
+  For a tailored quote, you can email us asynchronously or book a call.
+  Asynchronous communication is free. Synchronous communication is billed.
+
+asyncTitle: Email us (async — free)
+asyncText: >
+  Share your business model, target markets, and current payment stack.
+  We’ll reply with a concrete next step and an initial architecture direction.
+
+emailLabel: Email
+emailAddress: hello@blockchainge.com.py
+emailUs: Email us →
+
+pgpLabel: Optional PGP
+pgpFingerprint: A1045F5AC1856A57CE0C02EE834DF0BAE143B28C
+pgpLink: https://keys.openpgp.org/vks/v1/by-fingerprint/A1045F5AC1856A57CE0C02EE834DF0BAE143B28C
+
+syncTitle: Book a call (sync — paid)
+syncText: >
+  $100/hour. Leave the call with a concrete in- & off-ramp architecture plan
+  and clear implementation steps.
+
+bookingTitle: Book a paid strategy call
+bookingText: >
+  $100/hour. Leave with a clear blueprint covering payment acceptance,
+  payouts, settlement targets, and operational constraints.
+
+bookingNote: >
+  Pay with Bitcoin (Lightning or on-chain) or USDT today.
+  Credit and debit cards coming soon.
 ---

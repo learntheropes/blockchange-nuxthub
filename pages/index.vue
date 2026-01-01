@@ -111,23 +111,77 @@
       </div>
     </section>
 
-    <!-- BOOKING -->
+    <!-- CONTACT / BOOKING -->
     <section class="section" id="book">
       <div class="container">
         <div class="box shadow-soft">
+
           <h2 class="title is-4">
-            {{ home.meta.bookingTitle }}
+            {{ home.meta.contactTitle }}
           </h2>
 
-          <p class="has-text-grey mb-1">
-            {{ home.meta.bookingText }}
+          <p class="has-text-grey mb-5">
+            {{ home.meta.contactIntro }}
           </p>
 
-          <p class="is-size-7 has-text-grey mb-4">
-            {{ home.meta.bookingNote }}
-          </p>
+          <div class="columns is-variable is-6">
 
-          <IndexContacts />
+            <!-- ASYNC -->
+            <div class="column is-6">
+              <h3 class="title is-5 mb-2">
+                {{ home.meta.asyncTitle }}
+              </h3>
+
+              <p class="has-text-grey mb-4">
+                {{ home.meta.asyncText }}
+              </p>
+
+              <div class="content">
+                <p class="mb-2">
+                  <strong>{{ home.meta.emailLabel }}:</strong>
+                  <a :href="`mailto:${home.meta.emailAddress}`">
+                    {{ home.meta.emailAddress }}
+                  </a>
+                </p>
+
+                <p class="mb-0">
+                  <strong>{{ home.meta.pgpLabel }}:</strong>
+                  <a :href="home.meta.pgpLink" target="_blank" rel="noopener">
+                    {{ home.meta.pgpFingerprint }}
+                  </a>
+                </p>
+              </div>
+
+              <div class="mt-4">
+                <o-button
+                  variant="light"
+                  tag="a"
+                  :href="`mailto:${home.meta.emailAddress}`"
+                >
+                  {{ home.meta.emailUs }}
+                </o-button>
+              </div>
+            </div>
+
+            <!-- SYNC -->
+            <div class="column is-6">
+              <h3 class="title is-5 mb-2">
+                {{ home.meta.syncTitle }}
+              </h3>
+
+              <p class="has-text-grey mb-3">
+                {{ home.meta.syncText }}
+              </p>
+
+              <p class="is-size-7 has-text-grey mb-4" v-if="home.meta.bookingNote">
+                {{ home.meta.bookingNote }}
+              </p>
+
+              <!-- Your existing Cal.com / BTCPay widget -->
+              <IndexContacts />
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
