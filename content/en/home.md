@@ -81,4 +81,7 @@ bookingText: >
 bookingNote: >
   Pay with Bitcoin (Lightning or on-chain) or USDT today.
   Credit and debit cards coming soon.
+contactOneLinerPrefix: Send as an email to
+contactOneLinerMiddle: with optional PGP encryption with fingerprint
+contactOneLinerSuffix: or book a call below.
 ---
