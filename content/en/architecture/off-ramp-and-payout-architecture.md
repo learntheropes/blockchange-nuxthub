@@ -87,7 +87,7 @@ bookingText: >
   Define settlement targets, treasury rules, and payout flows.
   Leave with an off-ramp architecture designed for reliability and scale.
 
-bookingCtaLabel: Book now
+bookingCtaLabel: Get in touch
 bookingCtaHref: /#book
 ---
 

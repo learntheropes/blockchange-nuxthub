@@ -103,6 +103,6 @@ bookingText: >
   designed to reduce unnecessary declines.
 
 # NEW: CTA button
-bookingCtaLabel: Book now
+bookingCtaLabel: Get in touch
 bookingCtaHref: /#book
 ---

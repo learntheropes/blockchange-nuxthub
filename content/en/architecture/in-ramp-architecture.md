@@ -87,7 +87,7 @@ bookingText: >
   Discuss your markets, customers, and risk profile.
   Leave with a concrete in-ramp architecture and routing plan.
 
-bookingCtaLabel: Book now
+bookingCtaLabel: Get in touch
 bookingCtaHref: /#book
 ---
 
